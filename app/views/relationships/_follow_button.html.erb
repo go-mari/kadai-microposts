@@ -3,12 +3,13 @@
     <%= form_for(current_user.relationships.find_by(follow_id: user.id), html: { method: :delete }) do |f| %>
      <!--下記は<input type="hidden" name="follow_id" value="ユーザの id"> を生成-->
      <%= hidden_field_tag :follow_id, user.id %>
-     <%= f.submit 'Unfollow', class: 'btn btn-danger btn-block' %>
+     <%= f.submit 'Do not like', class: 'btn btn-danger btn-block' %>
     <% end %>
   <% else %>
     <%= form_for(current_user.relationships.build) do |f| %>
       <%= hidden_field_tag :follow_id, user.id %>
-      <%= f.submit 'Follow', class: 'btn btn-primary btn-block' %>
+      <!--<%= f.submit 'Follow', class: 'btn btn-primary btn-block' %>-->
+      <%= f.submit 'Like', class: 'btn btn-primary btn-block' %>
     <% end %>
   <% end %>
 <% end %>
