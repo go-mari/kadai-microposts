@@ -1,6 +1,9 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
+      <div>
+        <%= link_to 'お気に入りMicroposts', likes_user_path(current_user), class: 'btn btn-primary' %>
+      </div>
       <%= form_for(@micropost) do |f| %>
         <div class="form-group">
           <%= f.text_area :content, class: 'form-control', rows: 5 %>

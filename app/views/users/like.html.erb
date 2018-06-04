@@ -1,0 +1,11 @@
+<% if logged_in? %>
+  <ul class="media-list">
+    <% @favorites.each do |favorite| %>
+      <li class="media">
+        <div>
+          <%= user.name %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
